@@ -1,0 +1,9 @@
+[submodule "backend-java-service"]
+	path = backend-java-service
+	url = https://github.com/Egor12344321/backend_arctic_team.git
+[submodule "backend-python-service"]
+	path = backend-python-service
+	url = https://github.com/agentemy/acrt2.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/Dimasik2007123/egor_front.git
