@@ -41,7 +41,9 @@ services:
 
   backend-java-service:
     container_name: backend-java-service
-    build: ./backend-java-service
+    build:
+      context: ./backend-java-service
+      dockerfile: Dockerfile.prod
     ports:
       - "8080:8080"
     environment:
@@ -92,8 +94,6 @@ services:
         - "3000:3000"
       networks:
         - arctic_network
-
-
 
 volumes:
   postgres_data:
