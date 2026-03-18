@@ -50,10 +50,10 @@ services:
       SPRING_REDIS_HOST: redis-cache
       SPRING_REDIS_PORT: 6379
       SPRING_FLYWAY_BASELINE_ON_MIGRATE: "false"
-      POSTGRES_DB: arctic_team
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: egor
-      JWT_SECRET: ${JWT_SECRET}
+      JWT_SECRET: ${JWT_SECRET:-HZIKG4GAOn9AeozDachZGyMZkDSoX8nJEkCCvFMva4h}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-egor}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-arctic_team}
     networks:
       - arctic_network
     depends_on:
@@ -89,7 +89,6 @@ services:
   frontend:
       container_name: frontend
       build: ./frontend
-
       ports:
         - "3000:3000"
       networks:
