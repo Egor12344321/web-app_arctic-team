@@ -77,7 +77,7 @@ services:
       POSTGRES_PASSWORD: egor
       POSTGRES_HOST: postgres
       POSTGRES_PORT: 5432
-      AUTHORIZATION_KEY: 1234567
+      AUTHORIZATION_KEY: ${AUTHORIZATION_KEY:-1234567}
     ports:
         - "8000:8000"
     networks:
