@@ -34,3 +34,43 @@ git clone --recurse-submodules https://github.com/Egor12344321/web-app_arctic-te
 cd web-app_arctic-team
 docker-compose up -d
 ```
+### 🌟 Демонстрация работы программы:
+![img.png](images/loginpage.png)
+#### ***Рисунок 1 - страница входа в аккаунт***
+
+![img.png](images/reg.png)
+#### ***Рисунок 2 - страница регистрации***
+
+![img.png](images/userpage.png)
+#### ***Рисунок 3 - страница при входе у обычного пользователя с ролью USER***
+
+![img.png](images/usergr1.png)
+![img.png](images/usergr2.png)
+#### ***Рисунок 4 - графики участника экспедиции***
+
+![img.png](images/leaderpage.png)
+#### ***Рисунок 5 - страница при входе у пользователя, имеющего роль LEADER***
+
+![img_1.png](images/partpage.png)
+#### ***Рисунок 6 - страница просмотра участников для лидера экспедиции для дальнейшего просмотра графиков***
+
+![img.png](images/leadergr.png)
+#### ***Рисунок 7 - страница просмотра графиков для лидера экспедиции***
+
+![img.png](images/adminpage.png)
+#### ***Рисунок 8 - страница при входе у пользователя, имеющего роль ADMIN***
+
+![img.png](images/adminpanel.png)
+#### ***Рисунок 9 - панель админа для управления ролями пользователей***
+
+![img.png](images/createexp.png)
+#### ***Рисунок 10 - страница создания экспедиции***
+
+![img.png](images/detailspage.png)
+#### ***Рисунок 11 - страница деталей экспедиции***
+
+
+
+
+
+

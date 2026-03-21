@@ -85,6 +85,8 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+      backend-java-service:
+        condition: service_healthy
 
   frontend:
       container_name: frontend
