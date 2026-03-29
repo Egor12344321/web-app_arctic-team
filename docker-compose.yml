@@ -54,6 +54,8 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-egor}
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_DB: ${POSTGRES_DB:-arctic_team}
+      GIGACHAT_KEY: ${GIGACHAT_KEY:-key}
+      ANALYTICS_PROVIDER: ${ANALYTICS_PROVIDER:-gigachat}
     networks:
       - arctic_network
     depends_on:
@@ -61,6 +63,10 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
+    profiles:
+      - with-python
+      - without-python
+
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:8080/actuator/health" ]
       interval: 30s
@@ -87,6 +93,8 @@ services:
         condition: service_healthy
       backend-java-service:
         condition: service_healthy
+    profiles:
+      - with-python
 
   frontend:
       container_name: frontend
