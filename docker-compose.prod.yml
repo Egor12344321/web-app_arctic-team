@@ -8,9 +8,7 @@ services:
     environment:
       POSTGRES_DB: arctic_team
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: egor
-    ports:
-      - "5432:5432"
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
@@ -25,8 +23,6 @@ services:
   redis:
     image: redis:7-alpine
     container_name: redis-cache
-    ports:
-      - "6379:6379"
     volumes:
       - redis_data:/data
     networks:
@@ -47,14 +43,15 @@ services:
     ports:
       - "8080:8080"
     environment:
+      SPRING_PROFILES_ACTIVE: prod
       SPRING_REDIS_HOST: redis-cache
       SPRING_REDIS_PORT: 6379
       SPRING_FLYWAY_BASELINE_ON_MIGRATE: "false"
-      JWT_SECRET: ${JWT_SECRET:-HZIKG4GAOn9AeozDachZGyMZkDSoX8nJEkCCvFMva4h}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-egor}
+      JWT_SECRET: ${JWT_SECRET}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_DB: ${POSTGRES_DB:-arctic_team}
-      GIGACHAT_KEY: ${GIGACHAT_KEY:-key}
+      GIGACHAT_KEY: ${GIGACHAT_KEY}
       ANALYTICS_PROVIDER: ${ANALYTICS_PROVIDER:-gigachat}
     networks:
       - arctic_network
@@ -73,6 +70,7 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
+    restart: unless-stopped
 
   backend-python-service:
     container_name: python-service
@@ -80,14 +78,14 @@ services:
     environment:
       POSTGRES_DB: arctic_team
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: egor
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_HOST: postgres
       POSTGRES_PORT: 5432
       AUTHORIZATION_KEY: ${AUTHORIZATION_KEY:-1234567}
     ports:
-        - "8000:8000"
+      - "8000:8000"
     networks:
-        - arctic_network
+      - arctic_network
     depends_on:
       postgres:
         condition: service_healthy
@@ -97,16 +95,17 @@ services:
       - with-python
 
   frontend:
-      container_name: frontend
-      build:
-        context: ./frontend
-        args:
-          - VITE_API_URL=http://159.194.217.94:8080/api/v1
-      ports:
-        - "3000:3000"
-      networks:
-        - arctic_network
-      restart: unless-stopped
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+      args:
+        - VITE_API_URL=${VITE_API_URL}
+    ports:
+      - "3000:3000"
+    networks:
+      - arctic_network
+    restart: unless-stopped
 
 volumes:
   postgres_data:
