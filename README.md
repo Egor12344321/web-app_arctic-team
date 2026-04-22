@@ -35,38 +35,45 @@ cd web-app_arctic-team
 docker-compose up -d
 ```
 ### 🌟 Демонстрация работы программы:
-![img.png](images/loginpage.png)
+![img.png](images/start.png)
 #### ***Рисунок 1 - страница входа в аккаунт***
 
-![img.png](images/reg.png)
+![img.png](images/ref.png)
 #### ***Рисунок 2 - страница регистрации***
 
-![img.png](images/userpage.png)
+![img.png](images/userst.png)
 #### ***Рисунок 3 - страница при входе у обычного пользователя с ролью USER***
 
-![img.png](images/usergr1.png)
-![img.png](images/usergr2.png)
-#### ***Рисунок 4 - графики участника экспедиции***
+![img.png](images/graph1.png)
+![img_1.png](images/graph2.png)
+![img_2.png](images/graph3.png)
+![img_3.png](images/graph4.png)
+![img_4.png](images/graph5.png)
+![img_5.png](images/graph6.png)
+![img_6.png](images/graph7.png)
+![img_7.png](images/graph8.png)
+![img_8.png](images/graph9.png)
+#### ***Рисунок 4 - графики участника экспедиции и полученная аналитика от GigaChat***
 
-![img.png](images/leaderpage.png)
+![img_1.png](images/leaderst.png)
 #### ***Рисунок 5 - страница при входе у пользователя, имеющего роль LEADER***
 
-![img_1.png](images/partpage.png)
+![img.png](images/lederpart.png)
 #### ***Рисунок 6 - страница просмотра участников для лидера экспедиции для дальнейшего просмотра графиков***
 
-![img.png](images/leadergr.png)
+![img.png](images/partgraph.png)
 #### ***Рисунок 7 - страница просмотра графиков для лидера экспедиции***
 
-![img.png](images/adminpage.png)
+![img_1.png](images/adminstart.png)
 #### ***Рисунок 8 - страница при входе у пользователя, имеющего роль ADMIN***
 
-![img.png](images/adminpanel.png)
+![img_1.png](images/adm.png)
 #### ***Рисунок 9 - панель админа для управления ролями пользователей***
 
 ![img.png](images/createexp.png)
 #### ***Рисунок 10 - страница создания экспедиции***
 
-![img.png](images/detailspage.png)
+![img.png](images/expdetails.png)
 #### ***Рисунок 11 - страница деталей экспедиции***
 
 
