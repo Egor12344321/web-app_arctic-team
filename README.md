@@ -26,7 +26,10 @@
 | ***Frontend***       | Ссылка на обновленную версию: https://github.com/Dimasik2007123/egor_front    |  
 
 ### 🌟 Схема компонентов системы:
-![img.png](images/img.png)
+#### До перехода на ChartJS
+![img.png](images/pyt.png)
+#### После перехода на ChartJS
+![img.png](images/giga.png)
 
 ### 🌟 Запуск
 ```bash
