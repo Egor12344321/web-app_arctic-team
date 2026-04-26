@@ -31,11 +31,11 @@
 #### После перехода на ChartJS
 ![img.png](images/giga.png)
 
-### 🌟 Запуск
+### 🌟 Запуск (без Python-сервиса)
 ```bash
 git clone --recurse-submodules https://github.com/Egor12344321/web-app_arctic-team.git
 cd web-app_arctic-team
-docker-compose up -d
+docker-compose --profile without-python up -d
 ```
 ### 🌟 Демонстрация работы программы:
 ![img.png](images/start.png)
